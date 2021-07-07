@@ -1,0 +1,22 @@
+git restore --staged test.log
+git diff f1 f2
+git fetch --all
+git reset --hard origin/分支名  远程分支强制覆盖本地分支
+git checkout -b 分支名  本地新建分支
+git push origin 分支名  推送本地分支到远程
+git branch -D 删除分支
+git push origin --delete 删除远程分支
+git log
+git reflog
+git reset --hard commitid
+git restore --worktree README.md
+表示撤销 README.md 文件工作区的的修改	参数等同于  -w
+git restore --staged README.md
+表示撤销暂存区的修改，将文件状态恢复到未 add 之前	参数等同于 -S
+git restore -s HEAD~1 README.md
+表示将当前工作区切换到上个 commit 版本
+git restore -s dbv213 README.md
+表示将当前工作区切换到指定 commit id 的版本
+git tag v1.0
+git push origin v1.0
+
