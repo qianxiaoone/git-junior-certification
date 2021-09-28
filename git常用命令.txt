@@ -27,3 +27,43 @@ git show tagname 查看本地某个tag的详细信息
 git tag 查看本地所有tag
 git ls-remote --tags origin
 git tag -a v0.9 85fc7e7   如果我们忘了给某个提交打标签，又将它发布了，我们可以给它追加标签。
+
+
+
+
+
+
+
+
+
+
+
+
+
+Q&A
+background
+Today I want to upstream a remote release branch “origin/release/20.Q2.0”, but when I do the operation of git branch --set-upstream-to=origin/release/20.Q2.0, there occurs the problem Git : fatal: Ambiguous object name: 'origin/release/20.Q2.0. Also the git checkout -b localpath remotepath does not work.
+
+fix way
+Adding refs/remotes/origin instead of simply origin/ worked, just like:
+git branch --set-upstream-to=refs/remotes/origin/release/20.Q2.0
+
+git
+本地已經有 這個分支了， 所以git 很迷茫。
+重命名本地分支即可。
+git branch -m origin/master master
+
+
+
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+    git branch --set-upstream-to=origin/<branch> gitdoc
+
+
+
+
